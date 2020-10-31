@@ -10,26 +10,24 @@
     );
     register_post_type( 'service', $args );
 
-    //projects
-
-    $arg = array(
+   //  //projects animals
+    $args = array(
        'public' => true,
-       'label' => 'Projects'
-       'menu_icon' => 'dashicons-buddicons-buddypress-logo'
-    );
-    register_post_type('project', $args);
+       'label'  => 'Project',
 
-    //--Custom Taxonomy
-    $arg = array(
+    );
+    register_post_type( 'project', $args);
+
+    //custom taxonomy bird, dog, cat etc (type)
+
+    $args = array(
        'label' => 'Type',
        'public' => true,
        'hierarchical' => true,
-       'show_in_nav_menu'=> true,
+       'show_in_nav_menus' => true,
     );
-    register_taxonomy
 
-    )
-
+    register_taxonomy('types', 'project', $arg);
 
    }
    add_action( 'init', 'register_resource' );
