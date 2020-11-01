@@ -4,10 +4,16 @@
         <?php 
             while ( have_posts() ) {
                 the_post(); 
-                get_template_part('partials/content', 'standard');
+                get_template_part('partials/content', 'single-service');
+             
+             
+         
             } // end while
             //need to add 'get_except'php and button for more php usually for blogs
         ?>
+ 
 
     </div>
 <?php get_footer()?>
+
+						

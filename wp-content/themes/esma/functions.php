@@ -14,6 +14,7 @@
     $args = array(
        'public' => true,
        'label'  => 'Project',
+       'menu_icon' => 'dashicon-buddicons-buddypress-logo'
 
     );
     register_post_type( 'project', $args);
@@ -27,7 +28,14 @@
        'show_in_nav_menus' => true,
     );
 
-    register_taxonomy('types', 'project', $arg);
+    register_taxonomy('type','project', $args);
+
+    //slides
+    $args = array(
+      'public'    => true,
+      'label'     => 'Slides',
+   );
+   register_post_type( 'slide', $args );
 
    }
    add_action( 'init', 'register_resource' );

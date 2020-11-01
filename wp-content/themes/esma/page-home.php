@@ -1,16 +1,22 @@
 <?php get_header()?>
+
+
     <!-- list of services -->
     <section id="two" class="main style1 special">
-			<div class="container">
-				<header class="major">
-                    <h2><?php the_title()?></h2>
-				</header>
+	<?php get_template_part('slider')?>
+		<div class="container">
+			<header class="major">
+                <h2><?php the_title()?></h2>
+			</header>
 				<p><?php the_content()?></p>
-                
-				<div class="row gtr-150">
+			
+            <section id="header">
 
-                <?php
+			</section>   
+			<div class="row gtr-150">
 
+				<?php
+					
                     $args = array('post_type' => 'service');
                     // The Query
                     $the_query = new WP_Query( $args );
@@ -18,14 +24,23 @@
                     // The Loop
                     while ( $the_query->have_posts() ) {
                         $the_query->the_post();
-                        get_template_part('partials/content', 'grid-single-service');
+						get_template_part('partials/content', 'single-service');
+					
+
+					
+					
+
+					
                 }
 
                 /* Restore original Post Data */
                 wp_reset_postdata();
 
                 ?>
-
+			
+			</div>
+		</div>
+	</section> 
 					<!-- <div class="col-3 col-12-medium">
 						<span class="image fit"><img src="images/services/animalshelter.jpg" alt="" /></span>
 						<h3>Animal shelter for cats and dogs: </h3>
